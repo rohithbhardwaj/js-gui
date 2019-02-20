@@ -19,7 +19,7 @@
     
 <br>
     <p>Enter the text:
-      <input id="givetext" type="text" value=" " >
+      <input id="givetext" type="text" value="sentence" >
     </p>
     
     <button id="clicker" class="btn btn-primary">Click me!</button>
@@ -34,17 +34,16 @@
     console.log('Declare testable functions.....................')
 
     function length(x) {
-      return 40 - sentence.length
+      return 40 - x.length
     }
     console.log('Defined length=' + length)
 
     console.log('Declare event listeners .......................')
 
     document.getElementById('clicker').addEventListener('click', function () {
-      const s = document.getElementById('guest').value
-      const i = parseInt(document.getElementById('givetext').value)
-      console.log('i=' + i)
-      const ans = s + ',enter characters till' + length(x) + '.'
+      const s = document.getElementById('givetext').value
+      
+      const ans = s + ', the text length is ' + length(s) + '.'   
       document.getElementById('result').innerHTML = ans
     })
 
